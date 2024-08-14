@@ -1,24 +1,3 @@
-{
-  "name": "fbla-mad",
-  "version": "0.0.1",
-  "description": "FBLA mobile application development",
-  "main": "main.js",
-  "scripts": {
-    "test": "electron ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DerpNerdd/FBLA-MAD.git"
-  },
-  "keywords": [
-    "mobile",
-    "application",
-    "development"
-  ],
-  "author": "Alan Sanchez, Noelle Girldawg, Daniel Freezy",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/DerpNerdd/FBLA-MAD/issues"
-  },
-  "homepage": "https://github.com/DerpNerdd/FBLA-MAD#readme"
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:6dcb6399c1f0828debd553be399a45a0fb5290d01de2c33d588452dd93ee861f
+size 617
