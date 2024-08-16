@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">fbla-mad</string>
+    <string name="title_activity_main">fbla-mad</string>
+    <string name="package_name">derpnerdd.github.io</string>
+    <string name="custom_url_scheme">derpnerdd.github.io</string>
+</resources>
