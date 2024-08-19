@@ -1,0 +1,21 @@
+{
+  "name": "fbla-mad",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "webpack --config webpack.config.js"
+  },
+  "keywords": [],
+  "author": "Alan Sanchino, Noelle Wingus, Daniel Freakly",
+  "license": "GPL-3.0-only",
+  "description": "Help me please",
+  "dependencies": {
+    "express": "^4.19.2",
+    "jetifier": "^2.0.0"
+  },
+  "devDependencies": {
+    "electron": "^31.4.0",
+    "webpack": "^5.93.0"
+  }
+}
