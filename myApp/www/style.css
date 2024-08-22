@@ -34,10 +34,12 @@ header {
 .container {
     height: 600px;
     width: 500px;
-    background-color: rgb(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
     border-radius: 40px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .btn {
@@ -51,7 +53,16 @@ header {
     align-items: center;
 }
 
-.login,
+.login {
+    font-size: 22px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
 .signup {
     font-size: 22px;
     border: none;
@@ -59,7 +70,12 @@ header {
     background-color: transparent;
     position: relative;
     cursor: pointer;
-    color: #fff;
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn button.active {
+    color: black;
 }
 
 .slider {
