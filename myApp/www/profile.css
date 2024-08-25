@@ -25,9 +25,9 @@ body {
 .navigation {
     width: 400px;
     height: 70px;
-    top: 307px;
+    bottom: 0;
     background: #fff;
-    position: relative;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -167,8 +167,12 @@ body {
     transform: translateX(calc(70px * 4))
 }
 
-.logout-btn{
-    width: 50px;
-    height: 50px;
+.setting{
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
+    position: absolute;
+    top:-10%;
+    background-color: white;
+    margin: 20%;
 }
