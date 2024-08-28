@@ -12,25 +12,33 @@
             <li class="list">
                 <a href="#">
                     <span class="icon">
-                        <ion-icon name="skull-outline"></ion-icon>
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
                     </span>
-                    <span class="text">Skull</span>
+                    <span class="text">AI Chat</span>
                 </a>
             </li>
             <li class="list">
                 <a href="#">
                     <span class="icon">
-                        <ion-icon name="walk-outline"></ion-icon>
+                        <ion-icon name="school-outline"></ion-icon>
                     </span>
-                    <span class="text">Cool</span>
+                    <span class="text">Quizzes</span>
                 </a>
             </li>            
             <li class="list active">
-                <a href="homepage.html">
+                <a id="home"  href="homepage.html">
                     <span class="icon">
                         <ion-icon name="home-outline"></ion-icon>
                     </span>
                     <span class="text">Home</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="puzzle.html">
+                    <span class="icon">
+                        <ion-icon name="extension-puzzle-outline"></ion-icon>
+                    </span>
+                    <span class="text">Puzzles</span>
                 </a>
             </li>
             <li class="list">
@@ -41,18 +49,30 @@
                     <span class="text">Profile</span>
                 </a>
             </li>
-            <li class="list">
-                <a href="setting.html">
-                    <span class="icon">
-                        <ion-icon name="settings-outline"></ion-icon>
-                    </span>
-                    <span class="text">Settings</span>
-                </a>
-            </li>
-            <div class="indicator"></div>
+            <div id="border-gradient-rounded" class="indicator"></div>
         </ul>
     </div>
-    
+
+    <div class="skill">
+        <div class="outer">
+            <div class="inner"></div>   
+        </div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+        <defs>
+            <linearGradient id="GradientColor">
+                <stop offset="0%" stop-color="rgb(0, 191, 220)"/>
+                <stop  offset="100%" stop-color="rgb(117, 241, 255)"/>
+            </linearGradient>
+        </defs>
+        <circle cx="80" cy="80" r="70" stroke-linecap="round"/>
+    </svg>
+    <div id="level"></div>
+    </div>
+
+<!-- Change this later -->
+
+
+
     <script>
         const list = document.querySelectorAll('.list');
 
@@ -64,6 +84,8 @@
 
         list.forEach((item) =>
             item.addEventListener('click', activeLink));
+
+            
     </script>
     <script src="script.js"></script>
     <script src="main.js"></script>

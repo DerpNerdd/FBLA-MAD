@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="homeStyle.css">
     <title>Document</title>
 </head>
 <body>
@@ -33,7 +33,7 @@
                     <span class="text">Home</span>
                 </a>
             </li>
-            <li class="list">
+            <li class="list active">
                 <a href="puzzle.html">
                     <span class="icon">
                         <ion-icon name="extension-puzzle-outline"></ion-icon>
@@ -41,7 +41,7 @@
                     <span class="text">Puzzles</span>
                 </a>
             </li>
-            <li class="list active">
+            <li class="list">
                 <a href="profile.html">
                     <span class="icon">
                         <ion-icon name="person-circle-outline"></ion-icon>
@@ -52,13 +52,6 @@
             <div id="border-gradient-rounded" class="indicator"></div>
         </ul>
     </div>
-
-    <span class="logout-btn"><ion-icon name="exit-outline"></ion-icon></span>
-    <span class="settings">
-        <a href="setting.html">
-            <ion-icon name="settings-outline"></ion-icon>
-        </a>
-    </span>
     
     <script>
         const list = document.querySelectorAll('.list');

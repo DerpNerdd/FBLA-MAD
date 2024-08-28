@@ -11,7 +11,7 @@
 /* Homepage Navbar */
 
 :root {
-    --clr: #222327;
+    --clr:linear-gradient(190deg, rgb(198, 83, 255), rgb(126, 126, 253)); 
 }
 
 body {
@@ -109,8 +109,18 @@ body {
     height: 70px;
     background: #29bdfd;
     border-radius: 50%;
-    border: 6px solid var(--clr);
+    border: 6px solid transparent;
     transition: 0.5s;
+}
+
+#border-gradient-rounded {
+    border: 4px solid transparent;
+    border-radius: 50%;
+    background: 
+      linear-gradient(to right, white, #e1f2ff), 
+      linear-gradient(190deg, rgb(198, 83, 255), rgb(126, 126, 253)); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
 }
 
 .indicator::before {
@@ -156,3 +166,4 @@ body {
 .navigation ul li:nth-child(5).active ~ .indicator {
     transform: translateX(calc(70px * 4))
 }
+
