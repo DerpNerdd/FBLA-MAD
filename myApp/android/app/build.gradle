@@ -28,13 +28,16 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
-    implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
-    implementation "androidx.core:core-splashscreen:$coreSplashScreenVersion"
-    testImplementation "junit:junit:$junitVersion"
-    androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
+    implementation "androidx.appcompat:appcompat:1.7.0" // Updated and consistent version
+    implementation "androidx.coordinatorlayout:coordinatorlayout:1.2.0" // Assuming you meant this version
+    implementation "androidx.core:core-ktx:1.13.1" // Latest core-ktx version
+    implementation "androidx.constraintlayout:constraintlayout:2.1.4" // Latest constraintlayout version
+    implementation "androidx.core:core-splashscreen:1.0.0" // Ensure this version is correct
+    testImplementation "junit:junit:4.13.2" // Make sure this is the right JUnit version
+    androidTestImplementation "androidx.test.ext:junit:1.1.5" // Ensure the version matches your needs
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1" // Make sure this is correct
 }
+
 
 
 try {
