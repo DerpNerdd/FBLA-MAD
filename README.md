@@ -33,12 +33,12 @@ For support, cry about it idk what im donig
 
 Install FBLA-MAD with git clone
 
-## Wireframe
-
-[Wireframe Lucid](https://lucid.app/lucidchart/4befeba3-37b8-45fc-8d06-f8c35e17b39d/edit?viewport_loc=135%2C515%2C4661%2C2534%2C0_0&invitationId=inv_fd14829e-9005-42ea-8073-293521a6a987)
 
 ```bash
   git clone https://github.com/DerpNerdd/FBLA-MAD.git
   cd FBLA-MAD
 ```
     
+## Wireframe
+
+[Wireframe Lucid](https://lucid.app/lucidchart/4befeba3-37b8-45fc-8d06-f8c35e17b39d/edit?viewport_loc=135%2C515%2C4661%2C2534%2C0_0&invitationId=inv_fd14829e-9005-42ea-8073-293521a6a987)
