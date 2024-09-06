@@ -60,7 +60,42 @@ router.post('/login', async (req, res) => {
             return res.status(400).json({ msg: 'Invalid credentials' });
         }
         const token = jwt.sign({ id: user._id }, 'jwtSecret', { expiresIn: 3600 });
-        res.json({ token });
+        res.json({ token, userId: user._id });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// Fetch User Data
+router.get('/:userId', async (req, res) => {
+    try {
+        const user = await User.findById(req.params.userId);
+        if (!user) {
+            return res.status(404).json({ msg: 'User not found' });
+        }
+        res.json(user);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// Update XP
+router.post('/:userId/xp', async (req, res) => {
+    try {
+        const user = await User.findById(req.params.userId);
+        if (!user) {
+            return res.status(404).json({ msg: 'User not found' });
+        }
+        user.experience += req.body.xpChange;
+        if (user.experience >= 100) {
+            user.level += Math.floor(user.experience / 100);
+            user.experience = user.experience % 100;
+        } else if (user.experience < 0) {
+            user.level = Math.max(1, user.level - 1);
+            user.experience = 100 + user.experience;
+        }
+        await user.save();
+        res.json(user);
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
