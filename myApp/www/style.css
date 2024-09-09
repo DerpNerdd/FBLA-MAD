@@ -16,8 +16,8 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 30px;
-    background-image: url(./images/spectrum-gradient.png);
-    background-size: cover;
+    /* background-color: rgb(43, 159, 201); */
+    background-image: url("https://images.pexels.com/photos/1156684/pexels-photo-1156684.jpeg?cs=srgb&dl=pexels-arunbabuthomas-1156684.jpg&fm=jpg");
 }
 
 header {
