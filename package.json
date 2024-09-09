@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c513565f4418984f20ae3828b4efc12f417fcc3ae008dd77ec73e9f5aabaf2ad
-size 489
+{
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.6.0"
+  }
+}

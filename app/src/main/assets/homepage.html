@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homeStyle.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="navigation">
+        <ul>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </span>
+                    <span class="text">AI Chat</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="school-outline"></ion-icon>
+                    </span>
+                    <span class="text">Quizzes</span>
+                </a>
+            </li>            
+            <li class="list active">
+                <a id="home"  href="homepage.html">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="text">Home</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="puzzle.html">
+                    <span class="icon">
+                        <ion-icon name="extension-puzzle-outline"></ion-icon>
+                    </span>
+                    <span class="text">Puzzles</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="profile.html">
+                    <span class="icon">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                    </span>
+                    <span class="text">Profile</span>
+                </a>
+            </li>
+            <div id="border-gradient-rounded" class="indicator"></div>
+        </ul>
+    </div>
+
+    <div class="skill">
+        <div class="outer">
+            <div class="inner"></div>   
+        </div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+        <defs>
+            <linearGradient id="GradientColor">
+                <stop offset="0%" stop-color="rgb(0, 191, 220)"/>
+                <stop  offset="100%" stop-color="rgb(117, 241, 255)"/>
+            </linearGradient>
+        </defs>
+        <circle cx="80" cy="80" r="70" stroke-linecap="round"/>
+    </svg>
+    <div class="level" id="level"></div>
+    </div>
+
+<!-- Change this later -->
+
+
+
+    <script>
+        const list = document.querySelectorAll('.list');
+
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            this.classList.add('active');
+        }
+
+        list.forEach((item) =>
+            item.addEventListener('click', activeLink));
+
+            
+    </script>
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
