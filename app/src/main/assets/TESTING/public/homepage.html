@@ -53,30 +53,37 @@
         </ul>
     </div>
 
-    <div class="skill">
-        <div class="outer">
-            <div class="inner"></div>
+    <div class="container">
+        <div class="progress-container">
+            <svg class="progress-ring" width="120" height="120">
+                <circle
+                    class="progress-ring__circle"
+                    stroke="url(#grad1)"
+                    stroke-width="8"
+                    fill="transparent"
+                    r="52"
+                    cx="60"
+                    cy="60"
+                />
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgb(0,255,255);stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div id="level" class="level-text">Level: 1</div>
+            <div id="xp" class="xp-text">XP: 0/100</div>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-            <defs>
-                <linearGradient id="GradientColor">
-                    <stop offset="0%" stop-color="rgb(0, 191, 220)" />
-                    <stop offset="100%" stop-color="rgb(117, 241, 255)" />
-                </linearGradient>
-            </defs>
-            <circle cx="80" cy="80" r="70" stroke-linecap="round" />
-        </svg>
-        <div class="level" id="level">Level: 1</div>
+        <div class="buttons">
+            <button id="add5xp">Add 5 XP</button>
+            <button id="add10xp">Add 10 XP</button>
+            <button id="add15xp">Add 15 XP</button>
+            <button id="add20xp">Add 20 XP</button>
+        </div>
     </div>
-
-    <div class="controls">
-        <button id="add5xp">Add 5 XP</button>
-        <button id="add10xp">Add 10 XP</button>
-        <button id="add15xp">Add 15 XP</button>
-        <button id="add20xp">Add 20 XP</button>
-    </div>
-
     <script src="level.js"></script>
+    
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
