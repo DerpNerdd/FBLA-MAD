@@ -2,16 +2,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
-const userRoutes = require('./public/user');  // Make sure this path is correct
+const userRoutes = require('./public/user');  // Ensure this path is correct
+
 const app = express();
 
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://sanchez1alan1:kingalan2007@fblamad.ceiav.mongodb.net/?retryWrites=true&w=majority&appName=FBLAMAD', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+mongoose.connect('mongodb+srv://sanchez1alan1:kingalan2007@fblamad.ceiav.mongodb.net/?retryWrites=true&w=majority&appName=FBLAMAD')
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
 
@@ -32,6 +30,11 @@ app.get('/login.html', (req, res) => {
 
 app.get('/level.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'level.html'));
+});
+
+// Catch-all route for undefined routes
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html')); // Default to index.html for any undefined route
 });
 
 // Start the server

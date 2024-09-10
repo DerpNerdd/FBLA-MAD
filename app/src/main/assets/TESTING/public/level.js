@@ -1,3 +1,4 @@
+// Event listeners
 document.getElementById('add5xp').addEventListener('click', () => updateXP(5));
 document.getElementById('add10xp').addEventListener('click', () => updateXP(10));
 document.getElementById('add15xp').addEventListener('click', () => updateXP(15));
@@ -52,49 +53,50 @@ if (!userId) {
     fetchUserData();
 }
 
-// Update UI
+// Update the UI with the current XP and Level
 function updateUI() {
-    document.getElementById('level').innerText = `Level: ${level}`;
-    updateSVGProgress(xp);
+    document.getElementById('level').textContent = `Level ${level}`;
+    updateSVGProgress();
 }
 
-// Update SVG progress
-function updateSVGProgress(currentXP) {
-    const circle = document.querySelector('circle');
-    const radius = circle.r.baseVal.value;
+// Update the SVG progress bar based on the XP
+function updateSVGProgress() {
+    const progressCircle = document.querySelector('svg circle');
+    const radius = progressCircle.r.baseVal.value;
     const circumference = 2 * Math.PI * radius;
+    const offset = circumference - (xp / xpPerLevel) * circumference;
 
-    circle.style.strokeDasharray = `${circumference}`;
-    
-    // Calculate the offset based on the current XP
-    const offset = circumference - (currentXP / xpPerLevel) * circumference;
-    
-    // Apply the offset and rotate to start from the bottom
-    circle.style.strokeDashoffset = offset;
-    circle.style.transform = 'rotate(225deg)'; // Adjust this rotation to match the starting point
-    circle.style.transformOrigin = 'center';
+    progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+    progressCircle.style.strokeDashoffset = offset;
+    console.log(`SVG Progress: ${(xp / xpPerLevel) * 100}%`);
 }
 
-// Update XP
+// Update the user's XP and save it to the database
 async function updateXP(amount) {
-    const newXP = Math.max(0, xp + amount); // Prevent XP from going below 0
     try {
-        console.log(`Updating XP for user ${userId}: ${newXP}`);
+        console.log('Updating XP...');
+        xp += amount;
+
+        if (xp >= xpPerLevel) {
+            xp -= xpPerLevel;
+            level += 1;
+        }
+
         const response = await fetch(`/api/users/${userId}/xp`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ experience: newXP }),
+            body: JSON.stringify({ xpChange: amount }), 
         });
+
         if (!response.ok) {
             throw new Error('Failed to update XP');
         }
-        xp = newXP;
-        if (xp >= xpPerLevel) {
-            level++;
-            xp = xp % xpPerLevel; // Carry over remaining XP
-        }
+
+        const data = await response.json();
+        xp = data.experience;
+        level = data.level;
         updateUI();
     } catch (err) {
         console.error('Error updating XP:', err);

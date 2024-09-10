@@ -79,21 +79,34 @@ router.get('/:userId', async (req, res) => {
     }
 });
 
-// Update XP
 router.post('/:userId/xp', async (req, res) => {
     try {
         const user = await User.findById(req.params.userId);
         if (!user) {
             return res.status(404).json({ msg: 'User not found' });
         }
-        user.experience += req.body.xpChange;
-        if (user.experience >= 100) {
-            user.level += Math.floor(user.experience / 100);
-            user.experience = user.experience % 100;
-        } else if (user.experience < 0) {
-            user.level = Math.max(1, user.level - 1);
-            user.experience = 100 + user.experience;
+
+        // Calculate new experience
+        let newXP = user.experience + req.body.xpChange;
+        
+        // Level up if XP exceeds 100
+        while (newXP >= 100) {
+            newXP -= 100;
+            user.level += 1;
         }
+        
+        // Ensure XP doesn't drop below 0
+        while (newXP < 0) {
+            if (user.level > 1) {
+                newXP += 100;
+                user.level -= 1;
+            } else {
+                newXP = 0;
+                break;
+            }
+        }
+
+        user.experience = newXP;
         await user.save();
         res.json(user);
     } catch (err) {
