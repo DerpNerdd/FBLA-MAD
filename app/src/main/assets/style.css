@@ -75,6 +75,10 @@ header {
     transition: all 0.5s ease-in-out;
 }
 
+.magic {
+    color:black;
+}
+
 .btn button.active {
     color: black;
 }

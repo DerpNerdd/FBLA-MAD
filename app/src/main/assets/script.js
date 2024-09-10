@@ -7,15 +7,21 @@ document.addEventListener("DOMContentLoaded", () => {
   let slider = document.querySelector(".slider");
   let formSection = document.querySelector(".form-section");
 
+  login.classList.add("magic");
+
   if (signup && login && slider && formSection) {
     signup.addEventListener("click", () => {
       slider.classList.add("moveslider");
       formSection.classList.add("form-section-move");
+      login.classList.remove("magic");
+      signup.classList.add("magic");
     });
 
     login.addEventListener("click", () => {
       slider.classList.remove("moveslider");
       formSection.classList.remove("form-section-move");
+      signup.classList.remove("magic");
+      login.classList.add("magic");
     });
   }
 });
