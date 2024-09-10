@@ -212,8 +212,8 @@ circle {
     fill:none;
     stroke: url(#GradientColor);
     stroke-width: 20px;
-    stroke-dasharray: 500;
-    stroke-dashoffset: 500;
+    stroke-dasharray: 510;
+    stroke-dashoffset: 510;
     animation: anim 2s linear forwards;
 }
 
@@ -221,7 +221,8 @@ svg{
     position: absolute;
     top: 0;
     left: 0;
-    rotate: 132deg;
+    rotate: 126.5deg;
+    z-index: 40;
 }
 
 @keyframes anim {
@@ -240,7 +241,7 @@ svg{
     border-radius: 30px;
     margin-left: 23%;
     margin-top: -20%;
-    z-index: 50000000;
+    z-index: 50;
 }
 
 #level {
@@ -249,3 +250,4 @@ svg{
     display: flex;
     font-family: Poppins;
 }
+

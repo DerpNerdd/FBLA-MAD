@@ -20,12 +20,16 @@ body {
     align-items: center;
     min-height: 100vh;
     background: var(--clr);
+    gap: 30px;
+    background-image: url(./images/spectrum-gradient.png);
+    background-size: fit-content;
 }
 
 .navigation {
-    width: 400px;
+    min-width: 100%;
     height: 70px;
     bottom: 0;
+    left: 0;
     background: #fff;
     position: absolute;
     display: flex;
@@ -110,6 +114,8 @@ body {
     background: #29bdfd;
     border-radius: 50%;
     border: 6px solid transparent;
+    border-image: linear-gradient(45deg, red , yellow);
+    border-image-slice: 1;
     transition: 0.5s;
 }
 
@@ -167,12 +173,11 @@ body {
     transform: translateX(calc(70px * 4))
 }
 
-.setting{
-    width: 100px;
-    height: 100px;
+.profile {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     position: absolute;
-    top:-10%;
+    left: 36.5%;
     background-color: white;
-    margin: 20%;
 }
