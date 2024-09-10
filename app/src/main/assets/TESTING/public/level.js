@@ -55,14 +55,13 @@ if (!userId) {
 
 // Update the UI with the current XP and Level
 function updateUI() {
-    document.getElementById('level').textContent = `Level: ${level}`;
-    document.getElementById('xp').textContent = `XP: ${xp}/${xpPerLevel}`;
+    document.getElementById('level').textContent = `Level ${level}`;
     updateSVGProgress();
 }
 
 // Update the SVG progress bar based on the XP
 function updateSVGProgress() {
-    const progressCircle = document.querySelector('.progress-ring__circle');
+    const progressCircle = document.querySelector('svg circle');
     const radius = progressCircle.r.baseVal.value;
     const circumference = 2 * Math.PI * radius;
     const offset = circumference - (xp / xpPerLevel) * circumference;
@@ -88,7 +87,7 @@ async function updateXP(amount) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ xpChange: amount }), // Use xpChange to pass the amount
+            body: JSON.stringify({ xpChange: amount }), 
         });
 
         if (!response.ok) {
