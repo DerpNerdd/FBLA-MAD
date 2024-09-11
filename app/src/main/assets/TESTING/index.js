@@ -34,7 +34,7 @@ app.get('/level.html', (req, res) => {
 
 // Catch-all route for undefined routes
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html')); // Default to index.html for any undefined route
+    res.sendFile(path.join(__dirname, 'public', 'homepage.html')); // Default to index.html for any undefined route
 });
 
 // Start the server

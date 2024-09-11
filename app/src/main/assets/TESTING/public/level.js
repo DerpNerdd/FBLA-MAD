@@ -1,8 +1,8 @@
-// Event listeners
-document.getElementById('add5xp').addEventListener('click', () => updateXP(5));
-document.getElementById('add10xp').addEventListener('click', () => updateXP(10));
-document.getElementById('add15xp').addEventListener('click', () => updateXP(15));
-document.getElementById('add20xp').addEventListener('click', () => updateXP(20));
+// // Event listeners
+// document.getElementById('add5xp').addEventListener('click', () => updateXP(5));
+// document.getElementById('add10xp').addEventListener('click', () => updateXP(10));
+// document.getElementById('add15xp').addEventListener('click', () => updateXP(15));
+// document.getElementById('add20xp').addEventListener('click', () => updateXP(20));
 
 let userId;
 let xp = 0;

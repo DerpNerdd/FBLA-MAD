@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Profile Picture</title>
+    <link rel="stylesheet" href="pfp.css">
+</head>
+<body>
+    <h1>Upload Your Profile Picture</h1>
+    <div class="profile-container">
+        <img id="currentProfilePic" class="profile-pic" src="default.png" alt="Profile Picture">
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" id="profilePicInput" name="profilePic" accept="image/*">
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+    <script src="pfp.js"></script>
+</body>
+</html>

@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const express = require('express');
 const jwt = require('jsonwebtoken');
+const multer = require('multer');
+const path = require('path');
 const router = express.Router();
 
 const UserSchema = new mongoose.Schema({
@@ -25,6 +27,40 @@ UserSchema.pre('save', async function (next) {
 });
 
 const User = mongoose.model('User', UserSchema);
+
+// Set up multer for file uploads
+const storage = multer.diskStorage({
+    destination: './public/uploads/',
+    filename: (req, file, cb) => {
+        cb(null, `${req.params.userId}-${Date.now()}${path.extname(file.originalname)}`);
+    }
+});
+
+const upload = multer({ storage });
+
+router.post('/:userId/profile-picture', upload.single('profilePic'), async (req, res) => {
+    try {
+        const user = await User.findById(req.params.userId);
+        if (!user) {
+            return res.status(404).json({ msg: 'User not found' });
+        }
+
+        // Delete old profile picture if it exists
+        if (user.profilePicture) {
+            const oldPicPath = path.join(__dirname, '../public', user.profilePicture);
+            fs.unlink(oldPicPath, (err) => {
+                if (err) console.error('Error deleting old profile picture:', err);
+            });
+        }
+
+        // Save the new profile picture path
+        user.profilePicture = `/uploads/${req.file.filename}`;
+        await user.save();
+        res.json(user);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
 
 // Register
 router.post('/register', async (req, res) => {
