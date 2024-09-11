@@ -114,8 +114,6 @@ body {
     background: #29bdfd;
     border-radius: 50%;
     border: 6px solid transparent;
-    border-image: linear-gradient(45deg, red , yellow);
-    border-image-slice: 1;
     transition: 0.5s;
 }
 
@@ -173,11 +171,26 @@ body {
     transform: translateX(calc(70px * 4))
 }
 
-.profile {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    position: absolute;
-    left: 36.5%;
+.settings {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 3%;
+}
+
+.settings ion-icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--clr);
 }
