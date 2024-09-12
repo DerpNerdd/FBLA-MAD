@@ -179,6 +179,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 3%;
 }
 
 .settings ion-icon {
@@ -189,4 +193,63 @@ body {
     text-align: center;
     transition: 0.5s;
     color: var(--clr);
+}
+
+.logout-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 10%;
+    margin: 3%;
+}
+
+.logout-btn ion-icon{
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--clr);
+}
+
+.exit {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 3%;
+}
+
+.exit ion-icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--clr);
+}
+
+.settings-container {
+    width: 75%;
+    height: 80%;
+    background-color: rgb(238, 238, 238);
+    z-index: -10;
+    position: absolute;
+    left: 12.5%;
+    top: 10%;
+    border-radius: 1em;
 }
