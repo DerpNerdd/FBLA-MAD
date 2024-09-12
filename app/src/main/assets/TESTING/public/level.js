@@ -30,7 +30,6 @@ console.log(`User ID: ${userId}`);
 
 if (!userId) {
     console.error('No user ID found');
-    // Redirect to login page if not authenticated
     window.location.href = '/login.html';
 } else {
     async function fetchUserData() {
@@ -45,6 +44,11 @@ if (!userId) {
             level = data.level || 1;
             console.log(`Fetched User Data: XP=${xp}, Level=${level}`);
             updateUI();
+    
+            // Update profile picture if exists
+            if (data.profilePicture) {
+                document.getElementById('profile-pic').src = data.profilePicture;
+            }
         } catch (err) {
             console.error('Error fetching user data:', err);
         }
@@ -102,3 +106,4 @@ async function updateXP(amount) {
         console.error('Error updating XP:', err);
     }
 }
+

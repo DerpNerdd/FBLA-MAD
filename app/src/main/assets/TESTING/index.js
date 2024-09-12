@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
+const fs = require('fs');
 const userRoutes = require('./public/user');  // Ensure this path is correct
 
 const app = express();

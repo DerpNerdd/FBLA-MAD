@@ -268,3 +268,14 @@ svg {
 .buttons button:hover {
     background-color: #0056b3;
 }
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    object-fit: cover;
+    z-index: 35; /* Places the profile picture below the level text but above other elements */
+}
