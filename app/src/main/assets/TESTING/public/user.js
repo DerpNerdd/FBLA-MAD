@@ -151,4 +151,28 @@ router.post('/:userId/xp', async (req, res) => {
     }
 });
 
+router.post('/:userId/banner-picture', upload.single('bannerPic'), async (req, res) => {
+    try {
+        const user = await User.findById(req.params.userId);
+        if (!user) {
+            return res.status(404).json({ msg: 'User not found' });
+        }
+
+        // Delete old banner picture if it exists
+        if (user.bannerPicture) {
+            const oldBannerPath = path.join(__dirname, '../public', user.bannerPicture);
+            fs.unlink(oldBannerPath, (err) => {
+                if (err) console.error('Error deleting old banner picture:', err);
+            });
+        }
+
+        // Save the new banner picture path
+        user.bannerPicture = `/uploads/banners/${req.file.filename}`;
+        await user.save();
+        res.json({ bannerPicture: user.bannerPicture });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
 module.exports = router;

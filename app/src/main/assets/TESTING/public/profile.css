@@ -1,5 +1,5 @@
 @import url(
-"https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+"https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
     margin: 0;
@@ -23,7 +23,6 @@ body {
     gap: 30px;
     background-image: url(./images/spectrum-gradient.png);
     background-size: fit-content;
-    overflow-y: hidden;
 }
 
 .navigation {
@@ -115,8 +114,6 @@ body {
     background: #29bdfd;
     border-radius: 50%;
     border: 6px solid transparent;
-    border-image: linear-gradient(45deg, red , yellow);
-    border-image-slice: 1;
     transition: 0.5s;
 }
 
@@ -173,110 +170,138 @@ body {
 .navigation ul li:nth-child(5).active ~ .indicator {
     transform: translateX(calc(70px * 4))
 }
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-.skill {
-    width: 160px;
-    height: 160px;
-    position: relative;
-}
-
-.outer {
-    height: 160px;
-    width: 160px;
-    border-radius: 50%;
-    padding: 20px;
-    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
-                -6px -6px 10px -1px rgba(206, 206, 206, 0.25);
-    z-index: 30; /* Added z-index */
-}
-
-.inner {
-    height: 120px;
-    width: 120px;
-    border-radius: 50%;
-    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.15),
-                inset -4px -4px 6px -1px rgba(206, 206, 206, 0.25),
-                -0.5px -0.5px 0px rgb(162, 162, 162),
-                0.5px 0.5px 0px rgba(255, 255, 255, 0.15),
-                0px 12px 10px -10px rgba(0, 0, 0, 0.05);
-    z-index: 35; /* Adjusted z-index */
-    
-}
-
-circle {
-    fill: none;
-    stroke: url(#GradientColor);
-    stroke-width: 20px;
-    stroke-dasharray: 510;
-    stroke-dashoffset: 510;
-    transition: stroke-dashoffset 0.35s;
-    z-index: 40; /* Adjusted z-index */
-}
-
-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    rotate: 90deg;
-    z-index: 40; /* Adjusted z-index */
-}
-
-.level {
-    width: 90px;
-    height: 35px;
+.settings {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
     background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 30px;
-    margin-left: 22%;
-    margin-top: -120%;
-    z-index: 50;
-    font-weight: 600;
-    background: -webkit-linear-gradient(#4502ff, #03d8e7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: Poppins;
-    font-size: 1.2em;
-    text-decoration: underline;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 3%;
 }
 
-
-
-.buttons {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.settings ion-icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--clr);
 }
 
-.buttons button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+.banner {
+    width: 100%;
+    height: 30%;
+    background-color: blue;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -15;
 }
 
-.buttons button:hover {
-    background-color: #0056b3;
+.profile-container {
+    width: 100%;
+    height: 75%;
+    background-color: rgb(233, 238, 245);
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -10;
+    border-top-right-radius: 3%;
+    border-top-left-radius: 3%;
+}
+
+.profile-container {
+    width: 100%;
+    height: 75%;
+    background-color: rgb(233, 238, 245);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -10;
+    border-top-right-radius: 3%;
+    border-top-left-radius: 3%;
 }
 
 .profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    background-size: cover;
+    background-position: center;
     position: absolute;
-    top: 20px;
-    left: 20px;
-    object-fit: cover;
-    z-index: 35; /* Places the profile picture below the level text but above other elements */
+    top: -11%;
+    left: 5%;
+    z-index: 5;
+}
+
+.edit-icon {
+    position: absolute;
+    top: 250px;
+    left: 210px;
+    background-color: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+}
+
+.edit-icon ion-icon {
+    font-size: 1.5em;
+    color: var(--clr);
+    pointer-events: none;
+}
+
+.edit-icon:hover {
+    background-color: rgb(199, 199, 199);
+}
+
+.banner {
+    width: 100%;
+    height: 200px;
+    background-color: blue;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+#edit-banner {
+    position: absolute;
+    top: 160px;
+    left: 85%;
+    background-color: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+}
+
+#edit-banner ion-icon {
+    font-size: 1.5em;
+    color: var(--clr);
+    pointer-events: none;
+}
+
+#edit-banner:hover {
+    background-color: rgb(199, 199, 199);
 }

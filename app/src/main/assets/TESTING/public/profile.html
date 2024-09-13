@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="setting.css">
+    <link rel="stylesheet" href="profile.css">
     <title>Document</title>
 </head>
 <body>
@@ -53,20 +53,28 @@
         </ul>
     </div>
 
-    <span class="logout-btn"><ion-icon name="exit-outline"></ion-icon></span>
     <span class="settings">
         <a href="setting.html">
             <ion-icon name="settings-outline"></ion-icon>
         </a>
     </span>
-    <span class="exit">
-        <a href="profile.html">
-            <ion-icon name="close-outline"></ion-icon>
-        </a>
-    </span>
 
-    <div class="settings-container"></div>
+    <div class="banner" id="banner"></div>
+
+    <div class="profile-container">
+        <div id="profile-pic" class="profile-pic"></div>
+        <input type="file" id="profilePicInput" style="display: none;">
+    </div>
     
+    <button id="edit-button" class="edit-icon">
+        <ion-icon name="pencil" id="edit-icon"></ion-icon>
+    </button>
+    
+<input type="file" id="banner-input" style="display: none;" accept="image/*">
+<button id="edit-banner" class="edit-icon">
+    <ion-icon name="image-sharp"></ion-icon>
+</button>
+
     <script>
         const list = document.querySelectorAll('.list');
 
@@ -79,6 +87,8 @@
         list.forEach((item) =>
             item.addEventListener('click', activeLink));
     </script>
+
+<script src="profile.js"></script>
     <!-- <script src="script.js"></script> -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
