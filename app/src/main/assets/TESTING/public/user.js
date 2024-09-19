@@ -12,6 +12,7 @@ const UserSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     profilePicture: { type: String },
+    bannerPicture: { type: String }, // Add bannerPicture field
     level: { type: Number, default: 1 },
     experience: { type: Number, default: 0 },
     quizzesCompleted: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Quiz' }],
@@ -30,38 +31,22 @@ UserSchema.pre('save', async function (next) {
 const User = mongoose.model('User', UserSchema);
 
 // Set up multer for file uploads
-const storage = multer.diskStorage({
+const profileStorage = multer.diskStorage({
     destination: './public/uploads/',
     filename: (req, file, cb) => {
         cb(null, `${req.params.userId}-${Date.now()}${path.extname(file.originalname)}`);
     }
 });
-
-const upload = multer({ storage });
-
-router.post('/:userId/profile-picture', upload.single('profilePic'), async (req, res) => {
-    try {
-        const user = await User.findById(req.params.userId);
-        if (!user) {
-            return res.status(404).json({ msg: 'User not found' });
-        }
-
-        // Delete old profile picture if it exists
-        if (user.profilePicture) {
-            const oldPicPath = path.join(__dirname, '../public', user.profilePicture);
-            fs.unlink(oldPicPath, (err) => {
-                if (err) console.error('Error deleting old profile picture:', err);
-            });
-        }
-
-        // Save the new profile picture path
-        user.profilePicture = `/uploads/${req.file.filename}`;
-        await user.save();
-        res.json(user);
-    } catch (err) {
-        res.status(500).json({ error: err.message });
+const bannerStorage = multer.diskStorage({
+    destination: './public/uploads/banners/',
+    filename: (req, file, cb) => {
+        cb(null, `${req.params.userId}-${Date.now()}${path.extname(file.originalname)}`);
     }
 });
+
+const uploadProfile = multer({ storage: profileStorage });
+const uploadBanner = multer({ storage: bannerStorage });
+
 
 // Register
 router.post('/register', async (req, res) => {
@@ -151,22 +136,47 @@ router.post('/:userId/xp', async (req, res) => {
     }
 });
 
-router.post('/:userId/banner-picture', upload.single('bannerPic'), async (req, res) => {
+router.post('/:userId/profile-picture', uploadProfile.single('profilePic'), async (req, res) => {
     try {
         const user = await User.findById(req.params.userId);
         if (!user) {
             return res.status(404).json({ msg: 'User not found' });
         }
 
-        // Delete old banner picture if it exists
-        if (user.bannerPicture) {
-            const oldBannerPath = path.join(__dirname, '../public', user.bannerPicture);
-            fs.unlink(oldBannerPath, (err) => {
-                if (err) console.error('Error deleting old banner picture:', err);
+        // Delete old profile picture if it exists
+        if (user.profilePicture) {
+            const oldPicPath = path.join(__dirname, '../public', user.profilePicture);
+            fs.unlink(oldPicPath, (err) => {
+                if (err) console.error('Error deleting old profile picture:', err);
             });
         }
 
-        // Save the new banner picture path
+        // Save new profile picture path
+        user.profilePicture = `/uploads/${req.file.filename}`;
+        await user.save();
+        res.json(user);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// Upload banner route
+router.post('/:userId/banner-picture', uploadBanner.single('bannerPic'), async (req, res) => {
+    try {
+        const user = await User.findById(req.params.userId);
+        if (!user) {
+            return res.status(404).json({ msg: 'User not found' });
+        }
+
+        // Delete the old banner if it exists
+        if (user.bannerPicture) {
+            const oldBannerPath = path.join(__dirname, '../public', user.bannerPicture);
+            fs.unlink(oldBannerPath, (err) => {
+                if (err) console.error('Error deleting old banner:', err);
+            });
+        }
+
+        // Save new banner path
         user.bannerPicture = `/uploads/banners/${req.file.filename}`;
         await user.save();
         res.json({ bannerPicture: user.bannerPicture });

@@ -1,4 +1,3 @@
-// profile.js (client-side)
 document.addEventListener('DOMContentLoaded', function () {
     const userId = getUserIdFromToken();
 
@@ -97,9 +96,14 @@ function uploadProfilePic(userId) {
 }
 
 function uploadBanner(userId) {
-    const input = document.getElementById('banner-input');
+    const bannerInput = document.getElementById('banner-input');
+    if (!bannerInput.files.length) {
+        console.error('No banner selected.');
+        return;
+    }
+
     const formData = new FormData();
-    formData.append('bannerPic', input.files[0]);
+    formData.append('bannerPic', bannerInput.files[0]);
 
     fetch(`/api/users/${userId}/banner-picture`, {
         method: 'POST',
