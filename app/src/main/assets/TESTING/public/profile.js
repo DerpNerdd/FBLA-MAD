@@ -10,33 +10,31 @@ document.addEventListener('DOMContentLoaded', function () {
     loadProfilePic(userId);
     loadBannerPic(userId);
 
-    // Profile picture edit button
-    const editProfilePicBtn = document.getElementById('edit-button');
-    if (editProfilePicBtn) {
-        editProfilePicBtn.addEventListener('click', function () {
-            document.getElementById('profilePicInput').click();
+    // Click on profile picture to upload
+    const profilePicDiv = document.getElementById('profile-pic');
+    const profilePicInput = document.getElementById('profile-upload');
+    
+    if (profilePicDiv && profilePicInput) {
+        profilePicDiv.addEventListener('click', function() {
+            profilePicInput.click();  // Simulate click on hidden input
         });
-    }
 
-    // Banner edit button
-    const editBannerBtn = document.getElementById('edit-banner');
-    if (editBannerBtn) {
-        editBannerBtn.addEventListener('click', function () {
-            document.getElementById('banner-input').click();
-        });
-    }
-
-    // Profile picture input change
-    const profilePicInput = document.getElementById('profilePicInput');
-    if (profilePicInput) {
+        // Handle profile picture upload
         profilePicInput.addEventListener('change', function () {
             uploadProfilePic(userId);
         });
     }
 
-    // Banner input change
-    const bannerInput = document.getElementById('banner-input');
-    if (bannerInput) {
+    // Click on banner to upload
+    const bannerDiv = document.getElementById('banner');
+    const bannerInput = document.getElementById('banner-upload');
+
+    if (bannerDiv && bannerInput) {
+        bannerDiv.addEventListener('click', function() {
+            bannerInput.click();  // Simulate click on hidden input
+        });
+
+        // Handle banner picture upload
         bannerInput.addEventListener('change', function () {
             uploadBanner(userId);
         });
@@ -78,7 +76,12 @@ function loadBannerPic(userId) {
 }
 
 function uploadProfilePic(userId) {
-    const input = document.getElementById('profilePicInput');
+    const input = document.getElementById('profile-upload');
+    if (!input.files.length) {
+        console.error('No profile picture selected.');
+        return;
+    }
+
     const formData = new FormData();
     formData.append('profilePic', input.files[0]);
 
@@ -96,7 +99,7 @@ function uploadProfilePic(userId) {
 }
 
 function uploadBanner(userId) {
-    const bannerInput = document.getElementById('banner-input');
+    const bannerInput = document.getElementById('banner-upload');
     if (!bannerInput.files.length) {
         console.error('No banner selected.');
         return;

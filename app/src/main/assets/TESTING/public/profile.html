@@ -59,22 +59,28 @@
         </a>
     </span>
 
-    <div class="banner" id="banner"></div>
-
-    <div class="profile-container">
-        <div id="profile-pic" class="profile-pic"></div>
-        <input type="file" id="profilePicInput" style="display: none;">
+    <!-- Banner section -->
+    <div class="banner" id="banner" style="background-image: url('./uploads/banners/your-banner.jpg');">
+        <div class="edit-banner-container">
+            <div class="edit-banner">
+                <ion-icon name="pencil"></ion-icon>
+            </div>
+        </div>
     </div>
-    
-    <button id="edit-button" class="edit-icon">
-        <ion-icon name="pencil"></ion-icon>
-    </button>
-    
-    <input type="file" id="banner-input" style="display: none;" accept="image/*">
-    <button id="edit-banner" class="edit-banner">
-        <ion-icon name="image-sharp"></ion-icon>
-    </button>
-    
+
+    <!-- Profile picture section -->
+    <div class="profile-container">
+        <div class="profile-pic" id="profile-pic" style="background-image: url('./uploads/profile-pics/your-profile-pic.jpg');">
+            <div class="edit-icon-container">
+                <div class="edit-icon">
+                    <ion-icon name="pencil"></ion-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+    <input type="file" id="banner-upload" style="display: none;">
+    <input type="file" id="profile-upload" style="display: none;">
 
 
     <script>
