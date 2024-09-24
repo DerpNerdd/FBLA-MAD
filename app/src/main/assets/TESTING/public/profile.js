@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     loadProfilePic(userId);
     loadBannerPic(userId);
+    loadFullName(userId);
+    loadUserName(userId);
 
     // Click on profile picture to upload
     const profilePicDiv = document.getElementById('profile-pic');
@@ -73,6 +75,28 @@ function loadBannerPic(userId) {
             }
         })
         .catch(err => console.error('Error loading banner picture:', err));
+}
+
+function loadFullName(userId) {
+    fetch(`/api/users/${userId}`)
+        .then(response => response.json())
+        .then(user => {
+            if (user.first_name && user.last_name) {
+                document.getElementById('full-name').textContent = `${user.first_name} ${user.last_name}`;
+            }
+        })
+        .catch(err => console.error('Error loading user name:', err));
+}
+
+function loadUserName(userId) {
+    fetch(`/api/users/${userId}`)
+        .then(response => response.json())
+        .then(user => {
+            if (user.username) {
+                document.getElementById('username').textContent = `${user.username}`;
+            }
+        })
+        .catch(err => console.error('Error loading user name:', err));
 }
 
 function uploadProfilePic(userId) {

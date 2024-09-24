@@ -1,4 +1,14 @@
 {
+  "name": "express",
+  "version": "1.0.0",
+  "main": "index..js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon 01-express-basics.js"
+  },
+  "author": "Alan Sanchez",
+  "license": "MTI",
+  "description": "",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "express": "^4.19.2",
@@ -8,6 +18,7 @@
     "multer": "^1.4.5-lts.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.6"
+    "nodemon": "^3.1.7"
   }
 }
+

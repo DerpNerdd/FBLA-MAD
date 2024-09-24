@@ -78,6 +78,21 @@
             </div>
         </div>
     </div>
+    <div class="user-info">
+        <h1 id="full-name"></h1> <!-- Displaying user's full name -->
+    </div>
+    <div class="user-info-username">
+        <h1 id="username"></h1> <!-- Displaying user's username -->
+    </div>
+
+    <div class="xp-container">
+        <div class="xp-bar">
+            <div class="xp-fill" id="xp-fill"></div>
+        </div>
+        <div class="xp-text">
+            Level: <span id="level">1</span> | XP: <span id="xp-amount">0</span>/100
+        </div>
+    </div>
       
     <input type="file" id="banner-upload" style="display: none;">
     <input type="file" id="profile-upload" style="display: none;">
@@ -96,6 +111,7 @@
             item.addEventListener('click', activeLink));
     </script>
     <script src="profile.js"></script>
+    <script src="level.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

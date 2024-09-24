@@ -61,6 +61,8 @@ if (!userId) {
 function updateUI() {
     document.getElementById('level').textContent = `Level ${level}`;
     updateSVGProgress();
+
+    
 }
 
 // Update the SVG progress bar based on the XP

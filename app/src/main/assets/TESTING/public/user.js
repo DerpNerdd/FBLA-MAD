@@ -8,15 +8,18 @@ const fs = require('fs');
 const router = express.Router();
 
 const UserSchema = new mongoose.Schema({
+    first_name: { type: String, required: true }, // New field
+    last_name: { type: String, required: true },  // New field
     username: { type: String, required: true, unique: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     profilePicture: { type: String },
-    bannerPicture: { type: String }, // Add bannerPicture field
+    bannerPicture: { type: String },
     level: { type: Number, default: 1 },
     experience: { type: Number, default: 0 },
-    quizzesCompleted: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Quiz' }],
+    quizzesCompleted: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Quiz' }]
 });
+
 
 // Hash password before saving
 UserSchema.pre('save', async function (next) {
@@ -50,16 +53,18 @@ const uploadBanner = multer({ storage: bannerStorage });
 
 // Register
 router.post('/register', async (req, res) => {
-    const { username, email, password } = req.body;
+    const { first_name, last_name, username, email, password } = req.body;
     try {
         let user = await User.findOne({ email });
         if (user) {
             return res.status(400).json({ msg: 'User already exists' });
         }
         user = new User({
+            first_name, // Save first_name
+            last_name,  // Save last_name
             username,
             email,
-            password,
+            password
         });
 
         await user.save();
@@ -68,6 +73,7 @@ router.post('/register', async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
+
 
 // Login
 router.post('/login', async (req, res) => {
