@@ -1,6 +1,10 @@
 @import url(
 "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+@font-face {
+    font-family: bubble;
+    src: url(./Fonts/Atop-R99O3.ttf);
+}
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +21,7 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 30px;
-    background-image: url(./images/spectrum-gradient.png);
+    /* background-image: url(./images/spectrum-gradient.png); */
     background-size: cover;
 }
 
@@ -32,15 +36,18 @@ header {
 
 /* For the login/signup */
 
+.headerText{
+    font-family: bubble;
+    font-size:80px;
+    margin-top:5rem;
+}
+
 .container {
     height: 600px;
     width: 500px;
-    background-color: rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
-    border-radius: 40px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /* border-radius: 40px; */
 }
 
 .btn {
@@ -116,6 +123,7 @@ header {
 
 .login-box,
 .signup-box {
+    margin-top:-2rem;
     height: 100%;
     width: 500px;
     display: flex;
@@ -125,12 +133,11 @@ header {
     padding: 0px 40px;
 }
 
-.login-box {
-    gap: 50px;
+input:first-of-type{
+    border-radius: 5px 5px 0 0;
 }
-
-.signup-box {
-    gap: 30px;
+input:last-of-type{
+    border-radius: 0 0 5px 5px;
 }
 
 .ele {
@@ -140,7 +147,6 @@ header {
     border: none;
     color: rgb(77, 77, 77);
     background-color: rgb(240, 240, 240);
-    border-radius: 50px;
     padding-left: 30px;
     font-size: 18px;
 }
@@ -164,6 +170,7 @@ header {
     border: none;
     cursor: pointer;
     color: #fff;
+    margin-top:3rem;
 }
 
 /* For Responsiveness of the page */
