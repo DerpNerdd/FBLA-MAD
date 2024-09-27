@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="homeStyle.css">
+    <link rel="stylesheet" href="shopStyle.css">
     <title>Document</title>
 </head>
 <body>
+    <h1></h1>
     <div class="navigation">
         <ul>
-            <li class="list">
-                <a href="#">
+            <li class="list active">
+                <a href="shop.html">
                     <span class="icon">
-                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                        <ion-icon name="storefront-outline"></ion-icon>
                     </span>
-                    <span class="text">AI Chat</span>
+                    <span class="text">Shop</span>
                 </a>
             </li>
             <li class="list">
@@ -22,23 +23,23 @@
                     <span class="icon">
                         <ion-icon name="school-outline"></ion-icon>
                     </span>
-                    <span class="text">Quizzes</span>
+                    <span class="text">Learn</span>
                 </a>
             </li>            
             <li class="list">
-                <a href="homepage.html">
+                <a id="home"  href="homepage.html">
                     <span class="icon">
                         <ion-icon name="home-outline"></ion-icon>
                     </span>
                     <span class="text">Home</span>
                 </a>
             </li>
-            <li class="list active">
-                <a href="puzzle.html">
+            <li class="list">
+                <a href="games.html">
                     <span class="icon">
-                        <ion-icon name="extension-puzzle-outline"></ion-icon>
+                        <ion-icon name="game-controller-outline"></ion-icon>
                     </span>
-                    <span class="text">Puzzles</span>
+                    <span class="text">Games</span>
                 </a>
             </li>
             <li class="list">
@@ -52,7 +53,7 @@
             <div id="border-gradient-rounded" class="indicator"></div>
         </ul>
     </div>
-    
+
     <script>
         const list = document.querySelectorAll('.list');
 
