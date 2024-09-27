@@ -1,9 +1,3 @@
-// // Event listeners
-// document.getElementById('add5xp').addEventListener('click', () => updateXP(5));
-// document.getElementById('add10xp').addEventListener('click', () => updateXP(10));
-// document.getElementById('add15xp').addEventListener('click', () => updateXP(15));
-// document.getElementById('add20xp').addEventListener('click', () => updateXP(20));
-
 let userId;
 let xp = 0;
 let level = 1;
@@ -44,7 +38,7 @@ if (!userId) {
             level = data.level || 1;
             console.log(`Fetched User Data: XP=${xp}, Level=${level}`);
             updateUI();
-    
+
             // Update profile picture if exists
             if (data.profilePicture) {
                 document.getElementById('profile-pic').src = data.profilePicture;
@@ -57,15 +51,18 @@ if (!userId) {
     fetchUserData();
 }
 
-// Update the UI with the current XP and Level
+// Detect the page to adjust behavior
 function updateUI() {
-    document.getElementById('level').textContent = `Level ${level}`;
-    updateSVGProgress();
-
-    
+    if (window.location.pathname === '/homepage.html') {
+        document.getElementById('level').textContent = `Level ${level}`;
+        updateSVGProgress();
+    } else if (window.location.pathname === '/profile.html') {
+        document.getElementById('level-rectangle').textContent = `Level ${level}`;
+        updateRectangleProgress();
+    }
 }
 
-// Update the SVG progress bar based on the XP
+// Update the SVG progress bar based on the XP (for homepage)
 function updateSVGProgress() {
     const progressCircle = document.querySelector('svg circle');
     const radius = progressCircle.r.baseVal.value;
@@ -75,6 +72,14 @@ function updateSVGProgress() {
     progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
     progressCircle.style.strokeDashoffset = offset;
     console.log(`SVG Progress: ${(xp / xpPerLevel) * 100}%`);
+}
+
+// Update the rectangle progress bar (for profile)
+function updateRectangleProgress() {
+    const progressBar = document.querySelector('.xp-bar');
+    const progressPercentage = (xp / xpPerLevel) * 100;
+    progressBar.style.width = `${progressPercentage}%`;
+    console.log(`Rectangle Progress: ${progressPercentage}%`);
 }
 
 // Update the user's XP and save it to the database
@@ -108,4 +113,3 @@ async function updateXP(amount) {
         console.error('Error updating XP:', err);
     }
 }
-
