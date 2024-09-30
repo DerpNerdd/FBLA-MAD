@@ -170,3 +170,55 @@ body {
 .navigation ul li:nth-child(5).active ~ .indicator {
     transform: translateX(calc(70px * 4))
 }
+
+
+.shopTitle {
+    width: 95%;
+    height: 5.5%;
+    background-color: #424650;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.shopTitle h1{
+    color: white;
+}
+
+.sale{
+    width: 95%;
+    height: 20%;
+    background-color: #424650;
+    position: absolute;
+    top: 17%;
+}
+
+.shop{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 55%;
+    width: 100%;
+    height: 100%;
+}
+
+.shop #box {
+    width: 110px;
+    height: 120px;
+    background-color: #424650;
+    margin: 10px;
+}
+
+.coins{
+    width: 25%;
+    height: 5%;
+    background-color: #424650;
+    position: absolute;
+    right: 3%;
+    top: 8%;
+}
