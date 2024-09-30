@@ -214,27 +214,30 @@ body {
 
 /* Profile picture container */
 .profile-container {
-    position: relative;
-    margin-top: 15vh; /* Adjust for banner overlap */
+    position: absolute;
+    top: 15vh; /* Adjust position below the banner */
+    left: 5vw; /* Adjust horizontally */
+    z-index: 5; /* Ensure profile picture stays above other elements */
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2; /* Ensure it's above the banner */
 }
 
-/* Profile picture itself */
 .profile-pic {
-    width: 20vw; /* Adjusts with the screen width */
-    height: 20vw; /* Keeps the picture square */
-    border-radius: 50%; /* Makes the image a circle */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
     background-size: cover;
     background-position: center;
-    position: absolute;
-    top: -42vh; /* Move it further up relative to the viewport height */
-    left: -42vw; /* Move it further left relative to the viewport width */
-    z-index: 2; /* Keep it above other elements */
+    z-index: 10; /* Keep it above other elements */
+    position: relative;
+    cursor: pointer; /* Change cursor to pointer for interactivity */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.profile-pic:hover {
+    opacity: 0.8; /* Slight opacity change on hover */
+}
 /* Adjustments for smaller screens */
 @media (max-width: 768px) {
     .profile-pic {
@@ -255,12 +258,11 @@ body {
     }
 }
 
-/* Edit icon for profile picture */
 .edit-icon-container {
     position: absolute;
     bottom: 0;
     right: 0;
-    z-index: 3; /* Keep it above the profile picture */
+    z-index: 6; /* Keep it above the profile picture */
 }
 
 .edit-icon {
@@ -283,7 +285,6 @@ body {
 .edit-icon:hover {
     background-color: rgb(199, 199, 199);
 }
-
 /* Edit banner icon */
 .edit-banner-container {
     position: absolute;
@@ -383,16 +384,28 @@ body {
     }
 }
 
-/* .xp-container {
+.info-container {
+    width: 90%;
+    margin: 30px auto; /* Centers the container */
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /* Positioned above other content */
+}
+
+/* XP Bar */
+.xp-container {
     width: 80%; 
     height: 20px;
     background-color: #ccc;
     border-radius: 10px;
     overflow: hidden;
     margin-top: 20px; 
-    position: relative; 
-    left: 10%;
-    z-index: 1;
 }
 
 .xp-bar {
@@ -407,4 +420,4 @@ body {
     margin-top: 10px;
     font-weight: bold;
     text-align: center;
-} */
+}
