@@ -25,7 +25,12 @@
 /* Homepage Navbar */
 
 :root {
-        --clr:linear-gradient(190deg, rgb(198, 83, 255), rgb(126, 126, 253)); 
+        --deepblue: #2A2E5B;
+        --sftprpl: #6A5E9B;
+        --lavender: #E2D6F5;
+        --midnight: #1B1B2F;
+        --wrmorange: #F4A261;
+        --mutedpink: #D88B7C;
 }
 
 body {
@@ -35,7 +40,7 @@ body {
     min-height: 100vh;
     background: var(--clr);
     gap: 30px;
-    background-image: url("https://w0.peakpx.com/wallpaper/426/919/HD-wallpaper-vertical-stars-dark-sky-reflection-thumbnail.jpg");
+    background-image: url("./images/spectrum-gradient.png");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -285,7 +290,7 @@ svg{
     font-size: 22px;
     border: none;
     cursor: pointer;
-    color: #fff;
+    color: #000000;
     position: absolute;
     bottom: 25%;
 }
@@ -363,6 +368,6 @@ svg{
 .side-info-text {
     font-size: 11px;
     color: white;
-    white-space: nowrap; /* Prevents wrapping */
+    white-space: nowrap;
     margin: 0;
 }
