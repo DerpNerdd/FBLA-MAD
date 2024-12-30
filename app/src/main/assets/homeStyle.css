@@ -1,6 +1,8 @@
 @import url(
 "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Nerko+One&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=SUSE:wght@100..800&family=Ultra&display=swap');
+
 @font-face {
     font-family: bubble;
     src: url(./Fonts/Atop-R99O3.ttf);
@@ -40,9 +42,10 @@ body {
     min-height: 100vh;
     background: var(--clr);
     gap: 30px;
-    background-image: url("./images/spectrum-gradient.png");
-    background-size: cover;
+    background-image: url('./images/dusk-background.svg');
     background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .navigation {
@@ -103,7 +106,7 @@ body {
     font-size: 1.5em;
     text-align: center;
     transition: 0.5s;
-    color: var(--clr);
+    color: rgb(91, 178, 255);
 }
 
 .navigation ul li.active a .icon {
@@ -112,9 +115,9 @@ body {
 
 .navigation ul li a .text {
     position: absolute;
-    color: var(--clr);
+    color: rgb(91, 178, 255);
     font-weight: 400;
-    font-size: 0.75em;
+    font-size: 1em;
     letter-spacing: 0.05em;
     transition: 0.5s;
     opacity: 0;
@@ -134,7 +137,7 @@ body {
     background: #29bdfd;
     border-radius: 50%;
     border: 6px solid transparent;
-    border-image: linear-gradient(45deg, red , yellow);
+    border-image: linear-gradient(45deg, rgb(0, 195, 255) , yellow);
     border-image-slice: 1;
     transition: 0.5s;
 }
@@ -144,7 +147,7 @@ body {
     border-radius: 50%;
     background: 
         linear-gradient(to right, white, #e1f2ff), 
-        linear-gradient(190deg, rgb(198, 83, 255), rgb(126, 126, 253)); 
+        linear-gradient(190deg, rgb(110, 211, 255),rgb(91, 178, 255));
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;
 }
@@ -254,8 +257,8 @@ svg{
 
 .level {
     width: 90px;
-    height:35px;
-    background-color: #fff;
+    height: 35px;
+    background-color: rgb(91, 178, 255);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -266,7 +269,7 @@ svg{
     position: relative;
     font-weight: 600px;
     color: rgb(0, 0, 0);
-    display: flex;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 .profile-pic {
@@ -279,6 +282,103 @@ svg{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+
+
+/* side info styling */
+.side-info-1 {
+    position: absolute;
+    left: -150px;
+    top: 52%;
+    transform: translateY(-50%);
+    background-image: linear-gradient(to right,
+            rgb(110, 211, 255),
+            rgb(91, 178, 255));
+    width: 130px;
+    height: 50px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    animation: slide-right 1s ease-out forwards;
+}
+.side-info-2 {
+    position: absolute;
+    right: -150px;
+    top: 52%;
+    transform: translateY(-50%);
+    background-image: linear-gradient(to right,
+            rgb(110, 211, 255),
+            rgb(91, 178, 255));
+    width: 130px;
+    height: 50px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    animation: slide-left 1s ease-out forwards;
+}
+.side-info-3 {
+    position: absolute;
+    left: -150px;
+    top: 35%;
+    transform: translateY(-50%);
+    background-image: linear-gradient(to right,
+            rgb(110, 211, 255),
+            rgb(91, 178, 255));
+    width: 130px;
+    height: 50px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    animation: slide-right 1s ease-out forwards;
+}
+.side-info-4 {
+    position: absolute;
+    right: -150px;
+    top: 35%;
+    transform: translateY(-50%);
+    background-image: linear-gradient(to right,
+            rgb(110, 211, 255),
+            rgb(91, 178, 255));
+    width: 130px;
+    height: 50px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    animation: slide-left 1s ease-out forwards;
+}
+
+.side-info-text {
+    font-size: 11px;
+    color: black;
+    white-space: nowrap;
+    margin: 0;
+}
+
+/* Keyframes for sliding in */
+@keyframes slide-right {
+    0% {
+        left: -150px;
+    }
+    100% {
+        left: 0; 
+    }
+}
+@keyframes slide-left {
+    0% {
+        right: -150px;
+    }
+    100% {
+        right: 0; 
+    }
+}
+
 /* play button styling */
 .play-btn{
     height: 60px;
@@ -287,87 +387,54 @@ svg{
     background-image: linear-gradient(to right,
             rgb(110, 211, 255),
             rgb(91, 178, 255));
-    font-size: 22px;
+    font-size: 30px;
     border: none;
     cursor: pointer;
     color: #000000;
     position: absolute;
     bottom: 25%;
+    font-family: "Nerko One", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-/* side info styling */
-.side-info-1 {
-    position: absolute;
+/* Modal Background */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
     left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background-image: linear-gradient(to right,
-            rgb(110, 211, 255),
-            rgb(91, 178, 255));
-    padding: 20px;
-    width: 110px;
-    height: 50px;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start;
-}
-.side-info-2 {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background-image: linear-gradient(to right,
-            rgb(110, 211, 255),
-            rgb(91, 178, 255));
-    padding: 20px;
-    width: 110px;
-    height: 50px;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-.side-info-3 {
-    position: absolute;
-    left: 0;
-    top: 40%;
-    transform: translateY(-50%);
-    background-image: linear-gradient(to right,
-            rgb(110, 211, 255),
-            rgb(91, 178, 255));
-    padding: 20px;
-    width: 110px;
-    height: 50px;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-.side-info-4 {
-    position: absolute;
-    right: 0;
-    top: 40%;
-    transform: translateY(-50%);
-    background-image: linear-gradient(to right,
-            rgb(110, 211, 255),
-            rgb(91, 178, 255));
-    padding: 20px;
-    width: 110px;
-    height: 50px;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
 }
 
-.side-info-text {
-    font-size: 11px;
+/* Modal Content */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal Option Links */
+.modal-option {
+    display: inline-block;
+    font-size: 16px;
+    padding: 10px 15px;
+    margin: 10px;
+    background-color: rgb(91, 178, 255);
+    border-radius: 5px;
     color: white;
-    white-space: nowrap;
-    margin: 0;
+    text-decoration: none;
+    text-align: center;
+}
+
+.modal-option:hover {
+    background-color: rgb(70, 150, 230);
 }

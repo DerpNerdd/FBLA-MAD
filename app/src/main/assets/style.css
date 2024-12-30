@@ -20,7 +20,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url("https://w0.peakpx.com/wallpaper/426/919/HD-wallpaper-vertical-stars-dark-sky-reflection-thumbnail.jpg");
+    background-image: url(./images//dusk-background.svg);
     background-size: cover;
     background-repeat: no-repeat;
 }

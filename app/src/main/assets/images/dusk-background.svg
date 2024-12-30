@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+<!-- Base gradient background -->
+<defs>
+    <linearGradient id="duskGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" style="stop-color:#1a237e" />
+    <stop offset="20%" style="stop-color:#283593" />
+    <stop offset="40%" style="stop-color:#3949ab" />
+    <stop offset="60%" style="stop-color:#5c6bc0" />
+    <stop offset="80%" style="stop-color:#7986cb" />
+    <stop offset="100%" style="stop-color:#9fa8da" />
+    </linearGradient>
+    
+    <!-- Stars pattern -->
+    <pattern id="stars" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+    <circle cx="10" cy="10" r="0.5" fill="white" opacity="0.5" />
+    <circle cx="25" cy="20" r="0.3" fill="white" opacity="0.3" />
+    <circle cx="40" cy="30" r="0.4" fill="white" opacity="0.4" />
+    <circle cx="15" cy="40" r="0.2" fill="white" opacity="0.6" />
+    </pattern>
+</defs>
+
+<!-- Main background -->
+<rect width="400" height="600" fill="url(#duskGradient)" />
+
+<!-- Stars layer -->
+<rect width="400" height="600" fill="url(#stars)" opacity="0.8" />
+
+<!-- Soft clouds -->
+<path d="M0 100 Q100 80 200 100 T400 80" fill="#3949ab" opacity="0.2" />
+<path d="M0 150 Q150 130 300 150 T400 130" fill="#5c6bc0" opacity="0.15" />
+<path d="M0 200 Q200 180 400 200" fill="#7986cb" opacity="0.1" />
+
+<!-- Subtle mist layers -->
+<rect x="0" y="400" width="400" height="200" fill="url(#duskGradient)" opacity="0.3" />
+</svg>
