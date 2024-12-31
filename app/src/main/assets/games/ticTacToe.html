@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Tic Tac Toe</title>
+    <link rel="stylesheet" href="ticTacToe.css">
+</head>
+<body>
+    <div id="score">
+        <span>X Score: <span id="x-score">0</span></span>
+        <span>O Score: <span id="o-score">0</span></span>
+    </div>
+    <div class="game-container">
+        <div id="game-message" class="message"></div>
+        <!-- <h1>Learning Tic Tac Toe</h1> -->
+        <div id="current-player">Your Turn (X)</div>
+        <div id="game-board">
+            <div class="board-row">
+                <div class="board-cell" data-index="0"></div>
+                <div class="board-cell" data-index="1"></div>
+                <div class="board-cell" data-index="2"></div>
+            </div>
+            <div class="board-row">
+                <div class="board-cell" data-index="3"></div>
+                <div class="board-cell" data-index="4"></div>
+                <div class="board-cell" data-index="5"></div>
+            </div>
+            <div class="board-row">
+                <div class="board-cell" data-index="6"></div>
+                <div class="board-cell" data-index="7"></div>
+                <div class="board-cell" data-index="8"></div>
+            </div>
+        </div>
+        <button id="restart-button">Restart Game</button>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <h2 id="question-text"></h2>
+                <div id="answer-buttons"></div>
+            </div>
+        </div>
+    </div>
+    <script src="ticTacToe.js"></script>
+</body>
+</html>
