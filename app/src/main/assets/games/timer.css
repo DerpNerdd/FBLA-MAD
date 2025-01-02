@@ -1,0 +1,78 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-image: url('../images/dusk-background.svg');
+    background-repeat: no-repeat;
+    background-size: 100vh;
+    background-attachment: fixed;
+    color: white;
+}
+
+.game-container {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.timer {
+    font-size: 4rem;
+    margin: 1rem 0;
+    font-weight: bold;
+    color: rgb(110, 211, 255);
+}
+
+.score {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.question-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 1rem 0;
+}
+
+.question {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.options {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+button {
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-image: linear-gradient(to right,
+            rgb(110, 211, 255),
+            rgb(91, 178, 255));
+    color: #1a1a2e;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:disabled {
+    background: #666;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.game-over {
+    display: none;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.feedback {
+    margin: 1rem 0;
+    font-size: 1.25rem;
+    min-height: 2rem;
+}

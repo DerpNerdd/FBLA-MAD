@@ -44,8 +44,10 @@ body {
     gap: 30px;
     background-image: url('./images/dusk-background.svg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100vh;
     background-attachment: fixed;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .navigation {
@@ -300,7 +302,7 @@ svg{
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    animation: slide-right 1s ease-out forwards;
+    animation: slide-right .5s ease-out forwards;
 }
 .side-info-2 {
     position: absolute;
@@ -317,7 +319,7 @@ svg{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    animation: slide-left 1s ease-out forwards;
+    animation: slide-left .5s ease-out forwards;
 }
 .side-info-3 {
     position: absolute;
@@ -334,7 +336,7 @@ svg{
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    animation: slide-right 1s ease-out forwards;
+    animation: slide-right .5s ease-out forwards;
 }
 .side-info-4 {
     position: absolute;
@@ -351,7 +353,7 @@ svg{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    animation: slide-left 1s ease-out forwards;
+    animation: slide-left .5s ease-out forwards;
 }
 
 .side-info-text {

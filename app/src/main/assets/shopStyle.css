@@ -26,8 +26,10 @@ body {
     min-height: 100vh;
     background: var(--clr);
     gap: 30px;
-    background-image: url(./images/spectrum-gradient.png);
-    background-size: fit-content;
+    background-image: url('./images/dusk-background.svg');
+    background-repeat: no-repeat;
+    background-size: 100vh;
+    background-attachment: fixed;
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -90,7 +92,7 @@ body {
     font-size: 1.5em;
     text-align: center;
     transition: 0.5s;
-    color: var(--clr);
+    color: rgb(91, 178, 255);
 }
 
 .navigation ul li.active a .icon {
@@ -99,9 +101,9 @@ body {
 
 .navigation ul li a .text {
     position: absolute;
-    color: var(--clr);
+    color: rgb(91, 178, 255);
     font-weight: 400;
-    font-size: 0.75em;
+    font-size: 1em;
     letter-spacing: 0.05em;
     transition: 0.5s;
     opacity: 0;
@@ -121,6 +123,8 @@ body {
     background: #29bdfd;
     border-radius: 50%;
     border: 6px solid transparent;
+    border-image: linear-gradient(45deg, rgb(0, 195, 255) , yellow);
+    border-image-slice: 1;
     transition: 0.5s;
 }
 
@@ -128,8 +132,8 @@ body {
     border: 4px solid transparent;
     border-radius: 50%;
     background: 
-      linear-gradient(to right, white, #e1f2ff), 
-      linear-gradient(190deg, rgb(198, 83, 255), rgb(126, 126, 253)); 
+        linear-gradient(to right, white, #e1f2ff), 
+        linear-gradient(190deg, rgb(110, 211, 255),rgb(91, 178, 255));
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;
 }
@@ -256,4 +260,28 @@ body {
     right: 3%;
     top: 8%;
     border-radius: 10px;
+}
+
+.container {
+    position: absolute;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    z-index: 1000;
+}
+
+.container h1 {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.container p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 1);
 }

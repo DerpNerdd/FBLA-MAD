@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Timer Challenge</title>
+    <link rel="stylesheet" href="./timer.css">
+</head>
+    <body>
+        <div class="game-container">
+            <h1>Trivia Timer Challenge</h1>
+            <div class="timer">30.0</div>
+            <div class="score">Best Time: 0 seconds</div>
+            <div class="question-container">
+                <div class="question"></div>
+                <div class="options"></div>
+            </div>
+            <div class="feedback"></div>
+            <div class="game-over">
+                <h2>Game Over!</h2>
+                <p>Your time: <span class="final-time">0</span> seconds</p>
+                <button onclick="startGame()">Play Again</button>
+            </div>
+        </div>
+    </body>
+    <script src="./timer.js"></script>
+</html>
