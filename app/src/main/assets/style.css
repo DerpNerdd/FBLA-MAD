@@ -20,12 +20,12 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: rgb(96, 98, 238);
     background-image: url('./images/dusk-background.svg');
     background-repeat: no-repeat;
     background-size: 100vh;
     background-attachment: fixed;
 }
-
 
 /* For the login/signup */
 .headerText{

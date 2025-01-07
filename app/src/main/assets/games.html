@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="homeStyle.css">
+    <link rel="stylesheet" href="games.css">
     <title>Document</title>
 </head>
 <body>
@@ -52,22 +52,68 @@
             <div id="border-gradient-rounded" class="indicator"></div>
         </ul>
     </div>
-
-    <h1>hi</h1>
+    <!-- game container section -->
+    <h1 class="headerText">JOLT</h1>
+    <div class="games-container">
+        <h1 class="games-title">Choose Your Game</h1>
+        <div class="slideshow-container">
+            <a href="#prev" class="nav-link prev-link">❮</a>
+            <a href="#next" class="nav-link next-link">❯</a>
+            
+            <div class="game-card active">
+                <div class="icon-score jeopardy-icon"></div>
+                <h2 class="game-title">Jeopardy</h2>
+                <p class="game-description">Test your knowledge across various categories in this classic quiz game format. Earn points and compete for the highest score!</p>
+                <a href="./games/jeopardy.html" class="play-link">Play Jeopardy</a>
+            </div>
+    
+            <div class="game-card next">
+                <div class="game-icon">⏱️</div>
+                <h2 class="game-title">Timer Challenge</h2>
+                <p class="game-description">Race against time! Answer questions correctly to add precious seconds to your timer. How long can you last?</p>
+                <a href="./games/timer.html" class="play-link">Play Timer Challenge</a>
+            </div>
+    
+            <div class="game-card">
+                <div class="game-icon">⭕</div>
+                <h2 class="game-title">Tic Tac Toe</h2>
+                <p class="game-description">Classic game of X's and O's. Challenge a friend or play against the computer in this strategic battle!</p>
+                <a href="./games/ticTacToe.html" class="play-link">Play Tic Tac Toe</a>
+            </div>
+        </div>
+    </div>
     
     <script>
-        const list = document.querySelectorAll('.list');
-
-        function activeLink(){
-            list.forEach((item) =>
-            item.classList.remove('active'));
-            this.classList.add('active');
-        }
-
-        list.forEach((item) =>
-            item.addEventListener('click', activeLink));
+    const cards = document.querySelectorAll('.game-card');
+    const prevLink = document.querySelector('.prev-link');
+    const nextLink = document.querySelector('.next-link');
+    let currentIndex = 0;
+    
+    function updateSlides(newIndex) {
+        cards.forEach((card, index) => {
+            card.classList.remove('active', 'prev', 'next');
+            if (index === newIndex) {
+                card.classList.add('active');
+            } else if (index === (newIndex - 1 + cards.length) % cards.length) {
+                card.classList.add('prev');
+            } else if (index === (newIndex + 1) % cards.length) {
+                card.classList.add('next');
+            }
+        });
+        
+        currentIndex = newIndex;
+    }
+    
+    prevLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        updateSlides((currentIndex - 1 + cards.length) % cards.length);
+    });
+    
+    nextLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        updateSlides((currentIndex + 1) % cards.length);
+    });
     </script>
-    <script src="script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

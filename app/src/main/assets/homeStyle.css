@@ -18,30 +18,19 @@
 /* header text */
 .headerText{
     position: absolute;
-    top:5%;
+    top:0%;
     font-family: bubble;
     font-size:80px;
     margin-top:5rem;
 }
 
 /* Homepage Navbar */
-
-:root {
-        --deepblue: #2A2E5B;
-        --sftprpl: #6A5E9B;
-        --lavender: #E2D6F5;
-        --midnight: #1B1B2F;
-        --wrmorange: #F4A261;
-        --mutedpink: #D88B7C;
-}
-
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: var(--clr);
-    gap: 30px;
+    background-color: rgb(96, 98, 238);
     background-image: url('./images/dusk-background.svg');
     background-repeat: no-repeat;
     background-size: 100vh;
@@ -356,11 +345,17 @@ svg{
     animation: slide-left .5s ease-out forwards;
 }
 
-.side-info-text {
-    font-size: 11px;
+.side-info-text-left {
+    font-size: 18px;
     color: black;
     white-space: nowrap;
-    margin: 0;
+    margin: 0 0 0 1rem;
+}
+.side-info-text-right {
+    font-size: 18px;
+    color: black;
+    white-space: nowrap;
+    margin: 0 1rem 0 0;
 }
 
 /* Keyframes for sliding in */
@@ -440,3 +435,62 @@ svg{
 .modal-option:hover {
     background-color: rgb(70, 150, 230);
 }
+
+    .coin {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(145deg, #f1c40f, #f39c12);
+        border: 5px solid #e67e22;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.6);
+        margin-left: .5rem;
+    }
+
+    .coin-inner {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: linear-gradient(145deg, #f7d633, #e8b805);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid #d35400;
+        box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2), inset 0 -1px 2px rgba(255, 255, 255, 0.6);
+    }
+
+    .coin-symbol {
+        font-size: 20px;
+        font-weight: bold;
+        color: #e67e22;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .icon-score {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .jeopardy-icon {
+        background: linear-gradient(145deg, #9b59b6, #8e44ad);
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+        line-height: 40px;
+        margin-left: .5rem;
+    }
+    .jeopardy-icon::before {
+        content: "?";
+    }
+    .game-icon {
+        font-size: 2rem;
+        color: #4a90e2;
+    }

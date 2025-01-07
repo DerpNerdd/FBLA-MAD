@@ -11,11 +11,32 @@ body {
     background-attachment: fixed;
 }
 
+.quit-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    z-index: 1000;
+    text-decoration: none;
+}
+
+.quit-button:hover {
+    background-color: #ff0000;
+    transform: scale(1.05);
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin: 80px 0 20px 0;
     padding: 0 10px;
 }
 

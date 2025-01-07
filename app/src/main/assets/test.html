@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="homeStyle.css">
+    <link rel="stylesheet" href="test.css">
     <title>Document</title>
 </head>
 <body>
@@ -52,22 +52,17 @@
             <div id="border-gradient-rounded" class="indicator"></div>
         </ul>
     </div>
-
-    <h1>test</h1>
-    
-    <script>
-        const list = document.querySelectorAll('.list');
-
-        function activeLink(){
-            list.forEach((item) =>
-            item.classList.remove('active'));
-            this.classList.add('active');
-        }
-
-        list.forEach((item) =>
-            item.addEventListener('click', activeLink));
-    </script>
-    <script src="script.js"></script>
+    <h1 class="headerText">JOLT</h1>
+    <div class="test-container">
+        <div class="test-intro">
+            <div class="icon-wrapper">
+                <i class="icon-book"></i>
+            </div>
+            <h1>🧠 Test Your Knowledge</h1>
+            <p>Welcome to testing! Challenge yourself with our comprehensive quiz that covers various subjects including Mathematics, Science, History, and Geography.</p>
+            <a href="./testingPage.html" class="play-link">Begin Testing</a>
+        </div>
+    </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

@@ -9,18 +9,12 @@
 }
 
 /* Homepage Navbar */
-
-:root {
-    --clr:linear-gradient(190deg, rgb(198, 83, 255), rgb(126, 126, 253)); 
-}
-
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: var(--clr);
-    gap: 30px;
+    background-color: rgb(96, 98, 238);
     background-image: url(./images/spectrum-gradient.png);
     background-size: fit-content;
 }
