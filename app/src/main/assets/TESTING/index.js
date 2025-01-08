@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://sanchez1alan1:kingalan2007@fblamad.ceiav.mongodb.net/?retryWrites=true&w=majority&appName=FBLAMAD')
+mongoose.connect('mongodb+srv://sanchez1alan1:kingalan2007@fblamad.ceiav.mongodb.net/')
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
 
