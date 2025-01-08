@@ -27,11 +27,6 @@ body {
     text-decoration: none;
 }
 
-.quit-button:hover {
-    background-color: #ff0000;
-    transform: scale(1.05);
-}
-
 .game-container {
     margin-top: 2rem;
     max-width: 600px;

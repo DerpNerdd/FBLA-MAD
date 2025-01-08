@@ -27,11 +27,6 @@ body {
     text-decoration: none;
 }
 
-.quit-button:hover {
-    background-color: #ff0000;
-    transform: scale(1.05);
-}
-
 .header {
     display: flex;
     justify-content: space-between;

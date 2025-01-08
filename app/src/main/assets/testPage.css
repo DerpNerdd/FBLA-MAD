@@ -22,14 +22,16 @@
     font-family: bubble;
     font-size:80px;
     margin-top:5rem;
+    color: white;
 }
 
 /* Homepage Navbar */
 body {
     display: flex;
-    background-color: rgb(96, 98, 238);
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(96, 98, 238);
     min-height: 100vh;
     gap: 30px;
     background-image: url('./images/dusk-background.svg');
