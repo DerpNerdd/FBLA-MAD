@@ -1,4 +1,4 @@
-const questions = {
+const questionPool = {
     math: [
         { question: "What is 8 × 7?", options: ["58", "56", "64", "54"], correct: "56" },
         { question: "What is the square root of 144?", options: ["12", "14", "10", "16"], correct: "12" },
@@ -99,102 +99,27 @@ const questions = {
     ]
 };
 
-let timer;
-let timeLeft;
-let timeTrack;
-let bestTime = 0;
-let currentQuestion;
+// Get category from the URL
+const urlParams = new URLSearchParams(window.location.search);
+const category = urlParams.get('category');
 
-function startGame() {
-    timeLeft = 30;
-    timeTrack = 0;
-    updateTimer();
-    document.querySelector('.game-over').style.display = 'none';
-    document.querySelector('.question-container').style.display = 'block';
-    document.querySelector('.feedback').textContent = '';
-    timer = setInterval(updateTimer, 100);
-    askQuestion();
-}
+// Display category name
+const categoryHeader = document.getElementById('category-header');
+categoryHeader.textContent = `${category} Test`;
 
-function updateTimer() {
-    timeLeft = Math.max(0, timeLeft - 0.1);
-    document.querySelector('.timer').textContent = timeLeft.toFixed(1);
-    let body = document.querySelector('.body');
+// Retrieve and display questions for the selected category
+const questionsContainer = document.getElementById('questions-container');
+const questions = questionPool[category] || [];
 
-    if (timeLeft <= 30) {
-        body.style.boxShadow = '';
-        body.style.animation = '';
-    }
-    
-    if (timeLeft <= 10) {
-        body.style.boxShadow = '0 0 50px 15px red';
-        body.style.animation = 'blink-border 1s infinite alternate';
-    }
-    if (timeLeft <= 0) {
-        endGame();
-    }
-}
-
-function endGame() {
-    clearInterval(timer);
-    const finalTime = 30 + timeTrack;
-    if (finalTime > bestTime) {
-        bestTime = finalTime;
-        document.querySelector('.score').textContent = `Best Time: ${bestTime} seconds`;
-    }
-    document.querySelector('.game-over').style.display = 'block';
-    document.querySelector('.question-container').style.display = 'none';
-    document.querySelector('.final-time').textContent = finalTime;
-}
-
-function askQuestion() {
-    const categories = Object.keys(questions);
-    const category = categories[Math.floor(Math.random() * categories.length)];
-    const categoryQuestions = questions[category];
-    currentQuestion = categoryQuestions[Math.floor(Math.random() * categoryQuestions.length)];
-
-    document.querySelector('.question').textContent = currentQuestion.question;
-    const optionsContainer = document.querySelector('.options');
-    optionsContainer.innerHTML = '';
-
-    currentQuestion.options.forEach(option => {
-        const button = document.createElement('button');
-        button.textContent = option;
-        button.onclick = () => checkAnswer(option);
-        optionsContainer.appendChild(button);
-    });
-}
-
-function checkAnswer(answer) {
-    const feedback = document.querySelector('.feedback');
-    const timer = document.querySelector('.timer');
-    if (answer === currentQuestion.correct) {
-        timeLeft += 3;
-        timeTrack += 3;
-        feedback.textContent = '✅ Correct! +3 seconds';
-        feedback.style.color = '#4ecca3';
-        timer.style.color = '#4ecca3';
-        timer.style.transform = 'scale(1.5)'
-        setTimeout(() => {
-            timer.style.color = 'rgb(110, 211, 255)';
-            timer.style.transform = 'scale(1.0)'
-        }, 1000);
-    } else {
-        timeLeft -= 2;
-        timeTrack -=2;
-        feedback.textContent = '❌ Incorrect! -2 seconds. The correct answer was: ' + currentQuestion.correct;
-        feedback.style.color = '#ff6b6b';
-        timer.style.color = '#ff6b6b';
-        timer.style.transform = 'scale(1.2)'
-        setTimeout(() => {
-            timer.style.color = 'rgb(110, 211, 255)';
-            timer.style.transform = 'scale(1.0)'
-        }, 1000);
-    }
-    askQuestion();
-    setTimeout(() => {
-        feedback.textContent = '';
-    }, 1000);
-}
-
-startGame();
+questions.forEach((question, index) => {
+    const questionElement = document.createElement('div');
+    questionElement.classList.add('question');
+    questionElement.innerHTML = `
+        <p>${index + 1}. ${question.question}</p>
+        ${question.options.map((option, i) => `
+            <input type="radio" name="question${index}" value="${option}" id="question${index}_option${i}">
+            <label for="question${index}_option${i}">${option}</label><br>
+        `).join('')}
+    `;
+    questionsContainer.appendChild(questionElement);
+});

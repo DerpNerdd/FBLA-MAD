@@ -86,7 +86,6 @@ body {
     line-height: 75px;
     font-size: 1.5em;
     text-align: center;
-    transition: 0.5s;
     color: rgb(91, 178, 255);
 }
 
@@ -100,7 +99,6 @@ body {
     font-weight: 400;
     font-size: 1em;
     letter-spacing: 0.05em;
-    transition: 0.5s;
     opacity: 0;
     transform: translateY(20px);
 }
@@ -120,7 +118,6 @@ body {
     border: 6px solid transparent;
     border-image: linear-gradient(45deg, rgb(0, 195, 255) , yellow);
     border-image-slice: 1;
-    transition: 0.5s;
 }
 
 #border-gradient-rounded {
@@ -181,7 +178,8 @@ body {
 .shopTitle {
     width: 95%;
     height: 5.5%;
-    background-color: #424650;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
     position: absolute;
@@ -199,7 +197,8 @@ body {
 .sale{
     width: 95%;
     height: 20%;
-    background-color: #424650;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     position: absolute;
     top: 17%;
     border-radius: 20px;
@@ -216,7 +215,8 @@ body {
 
 }
 .costumes h1{
-    background: #424650;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     padding: 10px;
     padding-bottom: 0;
     padding-top: 0;
@@ -237,7 +237,8 @@ body {
 .shop #box {
     width: 110px;
     height: 120px;
-    background-color: #424650;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     margin: 10px;
     border-radius: 20px;
 }
@@ -250,7 +251,8 @@ body {
 .coins{
     width: 30%;
     height: 5%;
-    background-color: #424650;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     position: absolute;
     right: 3%;
     top: 8%;

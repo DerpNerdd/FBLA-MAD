@@ -1,9 +1,8 @@
 body {
-    min-height: 100vh;
+    height: 97vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
     background-image: url('../images/dusk-background.svg');
     background-repeat: no-repeat;
     background-size: 100vh;
@@ -11,6 +10,17 @@ body {
     color: white;
 }
 
+@keyframes blink-border {
+    0% {
+        box-shadow: 0 0 50px 15px red;
+    }
+    50% {
+        box-shadow: 0 0 50px 15px transparent;
+    }
+    100% {
+        box-shadow: 0 0 50px 15px red;
+    }
+}
 .quit-button {
     position: fixed;
     top: 20px;
@@ -39,6 +49,8 @@ body {
     margin: 1rem 0;
     font-weight: bold;
     color: rgb(110, 211, 255);
+    transform: scale(1.0);
+    transition: transform 0.3s ease-in-out;
 }
 
 .score {
