@@ -283,7 +283,6 @@ body {
     padding: 12px 25px;
     border-radius: 25px;
     font-size: 1.1rem;
-    transition: transform 0.2s;
 }
 
 .nav-link {

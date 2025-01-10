@@ -13,3 +13,18 @@ modal.addEventListener('click', (e) => {
         modal.style.display = 'none';
     }
 });
+
+let level = document.getElementById("level");
+let counter = 0;
+
+
+setInterval(() => {
+    if(counter == 65){
+        clearInterval();
+    }
+    else{
+        counter += 1;
+        level.innerHTML = "Level " + counter 
+    }
+
+}, 30);

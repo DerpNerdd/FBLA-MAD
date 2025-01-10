@@ -1,6 +1,3 @@
-@import url(
-"https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Nerko+One&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=SUSE:wght@100..800&family=Ultra&display=swap');
 
 @font-face {
@@ -12,16 +9,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
 }
 
-/* header text */
-.headerText{
-    position: absolute;
-    top:0%;
-    font-family: bubble;
-    font-size:80px;
-    margin-top:5rem;
+#category-header {
+    text-transform: capitalize;
     color: white;
 }
 
@@ -50,14 +41,194 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 1rem;
-    cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     z-index: 1000;
+}
+
+.quit-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    padding-top: 100px;
+    color: rgb(0, 0, 0);
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    width: 300px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
     text-decoration: none;
 }
 
-#category-header {
-    margin-top: 200px;
-    text-transform: capitalize;
+.quit-button-confirm {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    background: linear-gradient(45deg, #4a90e2, #7b68ee);
+    border-radius: 5px;
     color: white;
+    border: 1px solid transparent;
+}
+
+
+/* Quiz Application Styles */
+.quiz-app-container {
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 1rem;
+}
+
+.quiz-app-wrapper {
+width: 100%;
+max-width: 70rem;
+}
+
+.quiz-card {
+background: #e1f5fe;
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+padding: 1.5rem;
+border-radius: 15px;
+}
+
+.quiz-header {
+margin-bottom: 1rem;
+text-align: center;
+}
+
+.quiz-title {
+font-size: 1.5rem;
+font-weight: 600;
+color: #1e40af;
+}
+
+.score {
+text-align: center;
+color: #fafafa;
+font-weight: 900;
+font-size: 25px;
+margin-bottom: 1rem;
+}
+
+.quiz-question {
+color: #4b5563;
+margin-top: 0.5rem;
+}
+
+.quiz-choices-container {
+margin: 2rem 0;
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: center;
+}
+
+.quiz-choice-btn {
+font-size:17px;
+flex: 1 1 45%;
+height: 100px;
+text-align: center;
+padding: 10px;
+border-radius: 15px;
+border:none;
+cursor: pointer;
+transition: all 0.2s ease;
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+background: #e1f5fe;
+}
+
+.selected-answer {
+    background: linear-gradient(45deg, #4a90e2, #7b68ee);
+    color: white;
+}
+
+
+.quiz-footer {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 1rem;
+}
+
+.quiz-next-btn {
+width:160px;
+margin:0 auto;
+padding: 0.5rem 1.5rem;
+border-radius: 10px;
+border:2px solid #3b82f6;
+background: linear-gradient(45deg, #4a90e2, #7b68ee);
+color: white;
+}
+
+.quiz-next-btn:disabled {
+background: #d1d5db;
+color: #6b7280;
+}
+
+.quiz-restart-btn {
+margin-top: 1rem;
+background-color: #3b82f6;
+color: white;
+padding: 0.5rem 1.5rem;
+border:2px solid #3b82f6;
+border-radius: 10px;
+transition: background-color 0.3s ease;
+}
+
+/* end screen stylin */
+#scorePopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: none;
+    z-index: 1000;
+}
+
+#scorePopup button {
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #4a90e2, #7b68ee);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
 }
