@@ -34,22 +34,24 @@ const questionPool = {
         { question: "What is the atomic number of Carbon?", choices: ["12", "8", "6", "14"], correctAnswer: "6" },
         { question: "Which gas do plants need for photosynthesis?", choices: ["Hydrogen", "Carbon Dioxide", "Oxygen", "Nitrogen"], correctAnswer: "Carbon Dioxide" },
         { question: "What is the center of an atom called?", choices: ["Neutron", "Electron", "Proton", "Nucleus"], correctAnswer: "Nucleus" },
-        { question: "What is the chemical formula for water?", choices: ["H2O", "O2", "CO2", "H2"], correctAnswer: "H2O" },
         { question: "How many bones are in the adult human body?", choices: ["220", "205", "206", "210"], correctAnswer: "206" },
         { question: "What element does 'O' represent?", choices: ["Osmium", "Ozone", "Oganesson", "Oxygen"], correctAnswer: "Oxygen" },
-        { question: "Which planet is known as the Red Planet?", choices: ["Jupiter", "Saturn", "Mars", "Venus"], correctAnswer: "Mars" },
         { question: "What is the boiling point of water in Celsius?", choices: ["100°C", "120°C", "90°C", "150°C"], correctAnswer: "100°C" },
         { question: "What type of animal is a frog?", choices: ["Amphibian", "Mammal", "Reptile", "Bird"], correctAnswer: "Amphibian" },
-        { question: "What is the main source of energy for the Earth?", choices: ["Wind", "The Moon", "The Sun", "Tides"], correctAnswer: "The Sun" },
         { question: "What is the chemical formula for salt?", choices: ["NaOH", "NaCl", "CaCl2", "KCl"], correctAnswer: "NaCl" },
         { question: "How many planets are in our Solar System?", choices: ["8", "9", "7", "6"], correctAnswer: "8" },
         { question: "What is the primary function of red blood cells?", choices: ["Carrying oxygen", "Fighting disease", "Carrying carbon dioxide", "Producing energy"], correctAnswer: "Carrying oxygen" },
-        { question: "What is the largest organ in the human body?", choices: ["Heart", "Liver", "Skin", "Lungs"], correctAnswer: "Skin" },
         { question: "What is the main component of Earth's atmosphere?", choices: ["Oxygen", "Carbon Dioxide", "Hydrogen", "Nitrogen"], correctAnswer: "Nitrogen" },
         { question: "What is the process by which plants make their own food?", choices: ["Fermentation", "Respiration", "Digestion", "Photosynthesis"], correctAnswer: "Photosynthesis" },
-        { question: "Which organ is responsible for pumping blood?", choices: ["Brain", "Heart", "Lungs", "Liver"], correctAnswer: "Heart" },
         { question: "What is the chemical symbol for Silver?", choices: ["Ag", "Au", "Fe", "Cu"], correctAnswer: "Ag" },
-        { question: "What is the boiling point of water in Fahrenheit?", choices: ["212°F", "200°F", "230°F", "220°F"], correctAnswer: "212°F" }
+        { question: "What is the boiling point of water in Fahrenheit?", choices: ["212°F", "200°F", "230°F", "220°F"], correctAnswer: "212°F" },
+        { question: "Which element is most abundant in the Earth's crust?", choices: ["Oxygen", "Silicon", "Iron", "Calcium"], correctAnswer: "Oxygen" },
+        { question: "What is the main gas responsible for global warming?", choices: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Methane"], correctAnswer: "Carbon Dioxide" },
+        { question: "Which planet has the most moons?", choices: ["Earth", "Mars", "Jupiter", "Saturn"], correctAnswer: "Saturn" },
+        { question: "What is the formula for calculating speed?", choices: ["Distance / Time", "Time / Distance", "Speed = Mass x Acceleration", "Force / Time"], correctAnswer: "Distance / Time" },
+        { question: "Which organ in the human body is responsible for filtering blood?", choices: ["Liver", "Kidney", "Lungs", "Heart"], correctAnswer: "Kidney" },
+        { question: "What is the chemical formula for methane?", choices: ["CH4", "CO2", "H2O", "C2H6"], correctAnswer: "CH4" },
+        { question: "What is the largest planet in our Solar System?", choices: ["Earth", "Jupiter", "Saturn", "Neptune"], correctAnswer: "Jupiter" }
     ],    
     history: [
         { question: "In which year did World War II end?", choices: ["1944", "1946", "1945", "1943"], correctAnswer: "1945" },
@@ -72,7 +74,12 @@ const questionPool = {
         { question: "Which country was the first to grant women the right to vote?", choices: ["USA", "France", "New Zealand", "UK"], correctAnswer: "New Zealand" },
         { question: "What year did the French Revolution start?", choices: ["1790", "1776", "1800", "1789"], correctAnswer: "1789" },
         { question: "Who was the first person to circumnavigate the globe?", choices: ["Marco Polo", "Sir Francis Drake", "Ferdinand Magellan", "Christopher Columbus"], correctAnswer: "Ferdinand Magellan" },
-        { question: "Which empire was known for its gladiator games?", choices: ["Roman Empire", "British Empire", "Mongol Empire", "Ottoman Empire"], correctAnswer: "Roman Empire" }
+        { question: "Which empire was known for its gladiator games?", choices: ["Roman Empire", "British Empire", "Mongol Empire", "Ottoman Empire"], correctAnswer: "Roman Empire" },
+        { question: "Who was the first woman Prime Minister of the United Kingdom?", choices: ["Margaret Thatcher", "Theresa May", "Queen Elizabeth II", "Nancy Astor"], correctAnswer: "Margaret Thatcher" },
+        { question: "What was the name of the ship that carried the Pilgrims to America in 1620?", choices: ["Mayflower", "Santa Maria", "Endeavour", "Victory"], correctAnswer: "Mayflower" },
+        { question: "Which country was formerly known as Persia?", choices: ["Turkey", "Iran", "Iraq", "Afghanistan"], correctAnswer: "Iran" },
+        { question: "Who invented the telephone?", choices: ["Thomas Edison", "Alexander Graham Bell", "Nikola Tesla", "Louis Pasteur"], correctAnswer: "Alexander Graham Bell" },
+    
     ],
     geography: [
         { question: "What is the capital of Japan?", choices: ["Seoul", "Tokyo", "Beijing", "Bangkok"], correctAnswer: "Tokyo" },
@@ -96,6 +103,10 @@ const questionPool = {
         { question: "Which country is home to the Great Barrier Reef?", choices: ["New Zealand", "Australia", "Indonesia", "Fiji"], correctAnswer: "Australia" },
         { question: "What is the largest country in Africa?", choices: ["Nigeria", "South Africa", "Sudan", "Algeria"], correctAnswer: "Algeria" },
         { question: "What is the largest city in the world by population?", choices: ["Beijing", "New York", "Tokyo", "Mumbai"], correctAnswer: "Tokyo" },
+        { question: "Which country is home to the Amazon Rainforest?", choices: ["Brazil", "Peru", "Colombia", "Venezuela"], correctAnswer: "Brazil" },
+        { question: "Which continent is known as the 'Dark Continent'?", choices: ["Africa", "Asia", "Australia", "South America"], correctAnswer: "Africa" },
+        { question: "What is the capital city of Italy?", choices: ["Rome", "Milan", "Venice", "Florence"], correctAnswer: "Rome" },
+        { question: "Which country has the most volcanoes?", choices: ["Indonesia", "Japan", "USA", "Italy"], correctAnswer: "Indonesia" }
     ]
 };
 
@@ -129,7 +140,7 @@ const renderQuestion = () => {
     }
     nextButton.disabled = true;
     const currentQuizQuestion = quizQuestions[currentQuestion];
-    quizTitle.innerText = `Question ${currentQuestion + 1}`;
+    quizTitle.innerText = `Question ${currentQuestion + 1} / 25`;
     quizQuestion.innerText = currentQuizQuestion.question;
 
     choicesContainer.innerHTML = "";
