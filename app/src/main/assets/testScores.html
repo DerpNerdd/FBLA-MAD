@@ -8,7 +8,35 @@
     <body>
         <a href="./categories.html" class="quit-button">Back</a>
         <h1 class="headerText">JOLT</h1>
-        put scores here
+    
+        <div class="leaderboard-level-container">
+            <div class="level" onclick="handleLevelClick('Math')">
+                <button class="leaderboard-button" id="math-button">Math</button>
+            </div>
+            <div class="level" onclick="handleLevelClick('Science')">
+                <button class="leaderboard-button" id="science-button">Science</button>
+            </div>
+            <div class="level" onclick="handleLevelClick('History')">
+                <button class="leaderboard-button" id="history-button">History</button>
+            </div>
+            <div class="level" onclick="handleLevelClick('Geography')">
+                <button class="leaderboard-button" id="geography-button">Geography</button>
+            </div>
+        </div>
+    
+        <div>
+            <table class="leaderboard-table" id="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard-body">
+                </tbody>
+            </table>
+        </div>
+        <script src="./testScores.js"></script>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>
