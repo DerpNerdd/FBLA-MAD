@@ -301,9 +301,9 @@ body {
 }
 
 .prev-link {
-    left: 20px;
+    left: 0px;
 }
 
 .next-link {
-    right: 20px;
+    right: 0px;
 }
